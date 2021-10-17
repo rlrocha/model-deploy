@@ -13,14 +13,20 @@ app = Flask(__name__)
 @app.route('/', methods = ['GET', 'POST'])
 def main():
     
+    global pred
+    
     if request.method == 'POST':
         X_test = request.form['nb']
         X_pred = ut.predictions(X_test)
         
-        #print(X_pred)
+        pred = X_pred
+        print(X_pred)
+    else:
+        pred = 0
         
     #return 'Hello World'
-    return render_template('index.html', my_prediction = X_pred)
+    return render_template('index.html', my_prediction = pred)
+    #return render_template('index.html')
 
 # @app.route('/sub', methods=['POST'])
 # def submit():

@@ -22,7 +22,6 @@ def predictions(X_test):
     X_test = np.array(X_test)
     X_test = X_test.reshape(-1, 1)
     
-    X_pred = model.predict(X_test)
-    print(X_pred)
+    X_pred = model.predict(X_test)[0]
     
     return X_pred
