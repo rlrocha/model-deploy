@@ -17,7 +17,7 @@ def main():
         X_test = request.form['nb']
         X_pred = ut.predictions(X_test)
         
-        print(X_pred)
+        #print(X_pred)
         
     #return 'Hello World'
     return render_template('index.html', my_prediction = X_pred)
@@ -32,5 +32,5 @@ def main():
 #     return render_template('sub.html', n = name)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    #app.run()
+    #app.run(debug=True)
+    app.run()
